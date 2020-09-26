@@ -17,10 +17,19 @@
         console.log("Perdimos  al servidor");
       });
 
-      socket.emit("mensaje", { nombre: "Daniel Ortega" });
+      // socket.emit("mensaje", { nombre: "Daniel Ortega" });
 
       socket.on("mensaje", (data) => {
         console.log(data);
+      });
+
+      socket.on("nuevo-mensaje", (data) => {
+        console.log("Mesaje de flutter", data);
+      });
+
+      socket.on("active-bands", (bandas) => {
+        console.clear();
+        console.table(bandas);
       });
     </script>
   </body>
